@@ -8,7 +8,7 @@ app.use(express.json());
 const customers = [];
 
 function verifyIfExistAccountCPF(request, response, next){
-    const { cpf } = request.header;
+    const { cpf } = request.headers;
     const customer = customers.find((customer) => customer.cpf === cpf);
 
     if(!customer){
